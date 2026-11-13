@@ -1,0 +1,2 @@
+function evalExpr(s){let i=0;const p=()=>{let v=t();while(s[i]=='+'||s[i]=='-')v=s[i++]=='+'?v+t():v-t();return v},t=()=>{let v=f();while(s[i]=='*'||s[i]=='/')v=s[i++]=='*'?v*f():v/f();return v},f=()=>{if(s[i]=='-'){i++;return -f()}if(s[i]=='('){i++;let v=p();i++;return v}let j=i;while(s[i]>='0'&&s[i]<='9'||s[i]=='.')i++;return +s.slice(j,i)};return p()}
+module.exports={evalExpr};
